@@ -145,12 +145,14 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CURRENCY_PAIRS_TO_SYNC = [
-    # "USD-SGD",
-    # "USD-HKD",
-    # "SGD-USD",
-    # "HKD-USD"
-    "EUR-JPY",
-    "EUR-HKD",
+    "USD-SGD",
+    "USD-HKD",
+    "SGD-USD",
+    "HKD-USD"
+
+    # working pairs on free tier
+    # "EUR-JPY",
+    # "EUR-HKD",
 ]
 
 BROKER_URL = 'redis://redis:6379'
