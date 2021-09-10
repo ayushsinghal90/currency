@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+*$py.class
+celerybeat-schedule
+.idea
+__pycache__/*
+venv*/
+*.idea/
+dump.rdb

@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:9.6.5
+    container_name: currency_db
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+  redis:
+    image: "redis:alpine"
+  web:
+    container_name: currency_web
+    build: .
+    command: bash -c "python manage.py migrate --noinput && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/currency_code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+    links:
+      - db:db
+
+  celery:
+    container_name: currency_celery_worker
+    build: .
+    command: celery -A currency worker -l info
+    volumes:
+      - .:/currency_code
+    depends_on:
+      - db
+      - redis
+      - web
+  celery-beat:
+    container_name: currency_celery_beat
+    build: .
+    command: celery -A currency beat -l info
+    volumes:
+      - .:/currency_code
+    depends_on:
+      - db
+      - redis
+      - web
+
+volumes:
+  postgres_data:

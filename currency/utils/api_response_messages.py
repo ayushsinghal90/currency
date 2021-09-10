@@ -1,0 +1,21 @@
+# Success Messages
+SUCCESS = "Success"
+SERVER_ERROR_MSG = "Something went wrong with our server please retry after sometime."
+PAIR_INVALID_MSG = "Currency pair is invalid"
+PAIR_REQUIRED_MSG = "Currency pair is required"
+
+# Code
+SUCCESS_CODE = "SUCCESS"
+SERVER_ERROR = "SERVER_ERROR"
+PAIR_REQUIRED = "PAIR_REQUIRED"
+PAIR_INVALID = "PAIR_INVALID"
+
+SUCCESS_MESSAGE = {
+    SUCCESS_CODE: SUCCESS
+}
+
+ERROR_MESSAGE = {
+    SERVER_ERROR: SERVER_ERROR_MSG,
+    PAIR_INVALID: PAIR_INVALID_MSG,
+    PAIR_REQUIRED: PAIR_REQUIRED_MSG
+}
