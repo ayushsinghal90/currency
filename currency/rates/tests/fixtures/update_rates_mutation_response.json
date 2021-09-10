@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "currencyRates": {
+    "base": "EUR",
+    "rates": [
+      {
+        "symbol": "USD",
+        "rate": 1.18144,
+        "base": "EUR"
+      },
+      {
+        "symbol": "JPY",
+        "rate": 129.883902,
+        "base": "EUR"
+      },
+      {
+        "symbol": "INR",
+        "rate": 86.849455,
+        "base": "EUR"
+      }
+    ]
+  }
+}
