@@ -1,8 +1,8 @@
 import graphene
 from graphene import ObjectType
 
-from currency.rates.models import CurrencyRates, Rates
 from currency.rates.utils import get_rates
+from currency.rates.models import CurrencyRates, Rates
 
 
 class Query(ObjectType):

@@ -1,7 +1,7 @@
 import graphene
 
-from currency.rates.models import CurrencyRates, Rates
 from currency.rates.utils import fetch_and_save_rate
+from currency.rates.models import CurrencyRates, Rates
 
 
 class UpdateRates(graphene.Mutation):

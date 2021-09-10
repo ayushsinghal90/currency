@@ -1,8 +1,8 @@
 import logging
 
-from currency.rates.constants import RATES_KEY, RATE_EXPIRE_TIME_IN_SECONDS
 from currency.utils.fixer_api import FixerApi
 from currency.utils.redis_helper import RedisUtilities
+from currency.rates.constants import RATES_KEY, RATE_EXPIRE_TIME_IN_SECONDS
 
 LOG = logging.getLogger(__name__)
 

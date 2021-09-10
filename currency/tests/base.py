@@ -1,7 +1,7 @@
 import logging
 
-from django.test import SimpleTestCase
 from django.test.client import Client
+from django.test import SimpleTestCase
 
 LOG = logging.getLogger(__name__)
 

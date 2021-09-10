@@ -17,8 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from graphene_django.views import GraphQLView
 
-from currency.rates import urls as rates_urls
 from currency.schema import schema
+from currency.rates import urls as rates_urls
 
 urlpatterns = [
     path('rate/', include(rates_urls)),

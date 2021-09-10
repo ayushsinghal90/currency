@@ -4,7 +4,8 @@ from rest_framework.views import APIView
 
 from currency.rates.utils import get_rates
 from currency.utils.commons import get_api_error_response, get_api_success_response
-from currency.utils.api_response_messages import SUCCESS_MESSAGE, ERROR_MESSAGE, SUCCESS_CODE, INPUT_INVALID, SERVER_ERROR
+from currency.utils.api_response_messages import SUCCESS_MESSAGE, ERROR_MESSAGE, SUCCESS_CODE, \
+    INPUT_INVALID, SERVER_ERROR
 
 LOG = logging.getLogger(__name__)
 
