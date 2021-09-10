@@ -1,7 +1,7 @@
-# Video Library
+# currency
 # Introduction
 
-A video library that stores YouTube videos.
+This is a backend for a service that give rate between two currency
 # Developer Guide
 
 ## Getting Started
@@ -40,24 +40,3 @@ docker-compose down
 ~~~~
 http://0.0.0.0:8000
 ~~~~
-
-### Api Collection
-- [API collection](https://drive.google.com/file/d/13FNxLKe4PmorAuXJ1w39aAR89dbGQeWy/view?usp=sharing)
-- [ENV collection](https://drive.google.com/file/d/1KE90Wx4DnkCo-7rOEQSjPZdayzDqzLqc/view?usp=sharing)
-
-### Add YouTube api key
-- Url
-~~~
-http://0.0.0.0:8000/keys/
-~~~
-- body  **(key will expire after 22 jun 11am)**
-~~~
-{
-    "type": "youtube",
-    "key": "AIzaSyAQiK5eDBZwv0OO2uV4J-n_BqDbKHpHKYU"
-}
-~~~
-
-### Change YouTube schedule query config
-- change **SEARCH_KEYWORD** currently **entertainment**
-- change **SCHEDULED_QUERY_TIME** currently **700 minutes**
