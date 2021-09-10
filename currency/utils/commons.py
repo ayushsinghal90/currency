@@ -1,3 +1,7 @@
+import json
+import os
+
+from django.conf import settings
 from rest_framework import status as http_status
 from rest_framework.response import Response
 
@@ -36,3 +40,12 @@ def get_api_success_response(message=None, data=None, status=None):
     if message:
         return Response({"message": message}, status=status)
     return Response(status=status)
+
+
+def read_json(file_path):
+    module_dir = settings.BASE_DIR
+    file_path = os.path.join(module_dir, file_path)
+
+    with open(file_path) as f:
+        data = json.load(f)
+        return data

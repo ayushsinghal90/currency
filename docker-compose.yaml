@@ -10,6 +10,9 @@ services:
     command: bash -c "python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/currency_code
+    environment:
+      - APP_ENV=dev
+      - FIXER_API_KEY=ddc7126f15c37ac88accd2ee9e81390c
     ports:
       - "8000:8000"
     depends_on:
@@ -21,6 +24,8 @@ services:
     command: celery -A currency worker -l info
     volumes:
       - .:/currency_code
+    environment:
+      - APP_ENV=dev
     depends_on:
       - redis
       - web
@@ -31,6 +36,8 @@ services:
     command: celery -A currency beat -l info
     volumes:
       - .:/currency_code
+    environment:
+      - APP_ENV=dev
     depends_on:
       - redis
       - web

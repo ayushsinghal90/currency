@@ -50,7 +50,20 @@ INSTALLED_APPS = [
     'rest_framework',
     "graphene_django",
     'currency',
-    'currency.rates'
+    'currency.rates',
+    'django_nose',
+]
+
+# Use nose to run all tests
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+# Tell nose to measure coverage on the 'foo' and 'bar' apps
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=currency',
+    '--cover-inclusive',
+    '--cover-html',
+    '--cover-erase'
 ]
 
 GRAPHENE = {
@@ -151,7 +164,35 @@ CELERY_IMPORTS = (
 
 # Enviorment variable for fixer api
 
-FIXER_API_KEY = os.environ.get('FIXER_API_KEY', "ddc7126f15c37ac88accd2ee9e81390c")
+FIXER_API_KEY = os.environ.get('FIXER_API_KEY', None)
 FIXER_URL = 'http://data.fixer.io/api/'
 
-IS_CURRENT_TESTING_ENVIRONMENT = False
+
+class ProjectEnvironments(object):
+    LOCAL = "local"
+    DEVELOPMENT = "development"
+    QA = "qa"
+    PRODUCTION = "production"
+
+    TEST = "test"
+
+    __exported_env_map = {
+        "local": LOCAL,
+        "dev": DEVELOPMENT,
+        "qa": QA,
+        "production": PRODUCTION,
+        "test": TEST,
+    }
+
+    @classmethod
+    def get_current(cls):
+        in_use_env = os.environ.get("APP_ENV", cls.LOCAL)
+        return cls.__exported_env_map.get(in_use_env, cls.LOCAL)
+
+    @classmethod
+    def is_current_testing_env(cls):
+        return cls.get_current() == cls.TEST
+
+
+CURRENT_ENVIRONMENT_NAME = ProjectEnvironments.get_current()
+IS_CURRENT_TESTING_ENVIRONMENT = ProjectEnvironments.is_current_testing_env()

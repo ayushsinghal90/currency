@@ -16,7 +16,7 @@ LOG = logging.getLogger(__name__)
 app.conf.beat_schedule = {
     'currency_sync_engine': {
         'task': 'currency.scheduled_task.tasks.currency_sync_engine',
-        'schedule': crontab(hour='*')  # execute every hour
+        'schedule': crontab(minute='*/60')  # execute every hour
     }
 }
 
