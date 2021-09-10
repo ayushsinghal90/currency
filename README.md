@@ -9,7 +9,6 @@ This is a backend for a service that give rate between two currency
 ### Prerequisites
 - [python3.6](https://www.python.org/downloads/)
 - [virtualenv](https://virtualenv.pypa.io/en/latest/)
-- [postgresql](https://www.postgresql.org/download/)
 
 ### Initialize the project
 
