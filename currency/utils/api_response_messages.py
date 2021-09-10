@@ -1,7 +1,7 @@
 # Success Messages
 SUCCESS = "Success"
 SERVER_ERROR_MSG = "Something went wrong with our server please retry after sometime."
-INPUT_INVALID_MSG = "Currency pair input is invalid"
+INPUT_INVALID_MSG = "Currency rate input is invalid"
 
 # Code
 SUCCESS_CODE = "SUCCESS"
