@@ -12,7 +12,7 @@ services:
       - .:/currency_code
     environment:
       - APP_ENV=dev
-      - FIXER_API_KEY=ddc7126f15c37ac88accd2ee9e81390c
+      - FIXER_API_KEY=<add env here>
     ports:
       - "8000:8000"
     depends_on:
