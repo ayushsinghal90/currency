@@ -48,9 +48,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    "graphene_django",
     'currency',
     'currency.rates'
 ]
+
+GRAPHENE = {
+    "SCHEMA": 'currency.schema.schema'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
