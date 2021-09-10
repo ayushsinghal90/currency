@@ -94,6 +94,7 @@ mutation updateRates{
 ## Running test Cases
 Use the following command to run test cases in all apps.
 
+**Note**: current coverage **85%**
 ```bash
 python manage.py test
 ```
