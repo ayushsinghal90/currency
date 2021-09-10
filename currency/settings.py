@@ -60,7 +60,7 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 # Tell nose to measure coverage on the 'foo' and 'bar' apps
 NOSE_ARGS = [
     '--with-coverage',
-    '--cover-package=currency',
+    '--cover-package=currency.rates,currency.utils,currency.scheduled.task',
     '--cover-inclusive',
     '--cover-html',
     '--cover-erase'
