@@ -3,6 +3,7 @@ __pycache__/
 *$py.class
 celerybeat-schedule
 .coverage
+cover
 .idea
 __pycache__/*
 venv*/
