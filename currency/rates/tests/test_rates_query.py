@@ -12,11 +12,11 @@ class TestRatesQuery(BaseTestCase):
 
     def setUp(self):
         super(TestRatesQuery, self).setUp()
+        self.schema = graphene.Schema(query=Query)
 
     @mock.patch('currency.utils.fixer_api.FixerApi.get_latest_rates', FixerApiPatch.get_latest_rates_patch)
     def test_get_rates_query(self):
-        schema = graphene.Schema(query=Query)
-        result = schema.execute(
+        result = self.schema.execute(
             """{rates(base: "EUR", symbols: ["JPY","USD","INR"]){base,rates {symbol,rate,base}}}""")
         self.assertIsNone(result.errors)
 
@@ -26,8 +26,7 @@ class TestRatesQuery(BaseTestCase):
 
     @mock.patch('currency.utils.fixer_api.FixerApi.get_latest_rates', FixerApiPatch.get_latest_rates_failed_patch)
     def test_get_rates_query_failure(self):
-        schema = graphene.Schema(query=Query)
-        result = schema.execute(
+        result = self.schema.execute(
             """{rates(base: "IND", symbols: ["JPY","USD","INR"]){base,rates {symbol,rate,base}}}""")
         self.assertIsNotNone(result.errors)
 
