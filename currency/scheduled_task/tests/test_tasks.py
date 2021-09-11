@@ -1,12 +1,11 @@
 import mock
 
-from currency.rates.constants import RATES_KEY
-from currency.scheduled_task.tasks import currency_sync_engine
-from currency.tests.base import BaseTestCase
-from currency.utils.patch.fixer_api_patch import FixerApiPatch
 from django.test import override_settings
-
+from currency.tests.base import BaseTestCase
+from currency.rates.constants import RATES_KEY
 from currency.utils.redis_helper import RedisUtilities
+from currency.scheduled_task.tasks import currency_sync_engine
+from currency.utils.patch.fixer_api_patch import FixerApiPatch
 
 
 class TestTasks(BaseTestCase):
