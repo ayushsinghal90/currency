@@ -51,7 +51,7 @@ http://0.0.0.0:8000/rate/
 - Body
 ~~~~
 {
-    "pair":"EUR",
+    "base":"EUR",
     "symbols": ["JPY","USD"]
 }
 ~~~~
